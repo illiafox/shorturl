@@ -13,7 +13,7 @@ type cleanuri_struct struct {
 }
 
 // Get short link from cleanuri.com (only 2 Urls in 1 second for one ip )
-func cleanuri(url string) (string, error) {
+func Cleanuri(url string) (string, error) {
 	body := strings.NewReader("url=" + url)
 	req, err := http.NewRequest("POST", "https://cleanuri.com/api/v1/shorten", body)
 	if err != nil {
