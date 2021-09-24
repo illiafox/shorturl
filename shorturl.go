@@ -3,7 +3,6 @@ package shorturl
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"strings"
