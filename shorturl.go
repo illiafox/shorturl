@@ -96,18 +96,3 @@ func Pt1(url string, short string) (string, error) {
 	}
 	return "1pt.co/" + a.Short, nil
 }
-
-func main() {
-	a := struct {
-		Long string `json:"long"`
-		Code string `json:"code"`
-	}{Long: "ok", Code: "bbc"}
-	b, _ := json.Marshal(a)
-	fmt.Println(string(b))
-
-	ok, err := Pt1("https://github.com/illiafox/shorturl/blob/main/shorturl.go", "")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(ok)
-}
