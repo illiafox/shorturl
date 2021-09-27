@@ -94,7 +94,8 @@ if err != nil {
 
 
 
-## OnePt (currently not working)
+## OnePt 
+## (currently not working)
 #### Warning: couldn't check this function due to server 500 error (if works please tell about this in [issues](https://github.com/illiafox/shorturl/issues) )
 #### Limits: unknown
  ```
