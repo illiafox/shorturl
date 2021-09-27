@@ -124,8 +124,6 @@ OUTPUT (not checked): 1pt.co/XgpYj6
  * **Errors:**
  There are only one error that we know: **500 code**
 
-Nowadays it always returns this code
-
 Others: **[⬇ Errors](#errors)**
    
 **[⬆ Back to QuickList](#quicklist)**
