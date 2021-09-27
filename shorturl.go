@@ -96,3 +96,37 @@ func Pt1(url string, short string) (string, error) {
 	}
 	return "1pt.co/" + a.Short, nil
 }
+
+// Get 3 short links (shrtco.de/123abc , 9qr.de/123abc , shiny.link/123abc). The number of request is limited to 1 requests per second, per IP address.
+func Shrtcode(link string) (string, string, string, error) {
+	req, err := http.NewRequest("POST", "https://api.shrtco.de/v2/shorten?url="+link, nil)
+	if err != nil {
+		return "", "", "", err
+	}
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return "", "", "", err
+	}
+	defer resp.Body.Close()
+	a := struct {
+		Ok     bool   `json:"ok"`
+		Error  string `json:"error"`
+		Result struct {
+			Shortlink1 string `json:"short_link"`
+			Shortlink2 string `json:"short_link2"`
+			Shortlink3 string `json:"short_link3"`
+		} `json:"result"`
+	}{Ok: false}
+	byt, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return "", "", "", err
+	}
+	if err = json.Unmarshal(byt, &a); err != nil {
+		return "", "", "", err
+	}
+	//	print(a)
+	if !a.Ok {
+		return "", "", "", errors.New(a.Error)
+	}
+	return a.Result.Shortlink1, a.Result.Shortlink2, a.Result.Shortlink3, nil
+}
