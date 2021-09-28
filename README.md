@@ -1,6 +1,6 @@
 
 ## Simple url shortener bindings for go - [![Go](https://github.com/illiafox/shorturl/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/illiafox/gostrings/actions/workflows/go.yml)
-##### *Services:* 3 | *Last version:* v0.0.3 (26.09.2021)
+##### *Services:* 4 | *Last version:* v0.0.4 (28.09.2021)
 ## QuickList
 * [Install](#install)
 * [Usage](#usage)
